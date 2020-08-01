@@ -1,0 +1,49 @@
+{
+  "name": "youtu.be-clone",
+  "version": "1.0.0",
+  "description": "Youtube Clone built with Vanilla JS, NodeJS, MongoDB, Heroku",
+  "main": "index.js",
+  "scripts": {
+    "dev:server": "nodemon --exec babel-node init.js --ignore `scss` --delay 2",
+    "dev:assets": "gulp dev",
+    "build:assets": "gulp build"
+  },
+  "browserslist": {
+    "browsers": [
+      "last 2 versions"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarvagya8/youtu.be-clone.git"
+  },
+  "author": "Benny Joo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sarvagya8/youtu.be-clone/issues"
+  },
+  "homepage": "https://github.com/sarvagya8/youtu.be-clone#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/node": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "del": "^5.1.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-es6-template-engine": "^2.2.2",
+    "gulp": "^4.0.2",
+    "gulp-csso": "^4.0.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-webserver": "^0.9.1",
+    "helmet": "^3.23.0",
+    "mongoose": "^5.9.18",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "node-sass": "^4.14.1"
+  }
+}

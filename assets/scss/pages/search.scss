@@ -1,0 +1,13 @@
+.search__wrapper {
+  padding: 70px 10px;
+  .search__header {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .search__videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 20px;
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/static/styles.css" />
+    <link rel="icon" href="/static/titleLogo.png" type="image/png" />
+    <script
+      src="https://kit.fontawesome.com/a02776e653.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>${title} | YouTube</title>
+  </head>
+  <body>
+    <header>
+      <div class="header__wrapper">
+        <div class="header__column">
+          <a href="/">
+            <i class="fab fa-youtube"></i>
+            <h3>YouTube</h3>
+          </a>
+        </div>
+        <div class="header__column">
+          <form action="/search" method="get">
+            <input name="term" type="text" placeholder="Search..." />
+          </form>
+        </div>
+        <div class="header__column">
+          <ul>
+            <a href="/join"><li>Join</li></a>
+            <a href="/login"><li>Login</li></a>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="form-container">
+        <form
+          method="post"
+          action="/videos/upload"
+          enctype="multipart/form-data"
+        >
+          <input
+            type="file"
+            name="videoFile"
+            required="true"
+            accept="video/*"
+          />
+          <input type="text" name="title" placeholder="Title" required="true" />
+          <textarea
+            name="description"
+            placeholder="Write a description of your video..."
+            required="true"
+          ></textarea>
+          <input type="submit" value="Upload Video" />
+        </form>
+      </div>
+    </main>
+    <footer>
+      <i class="fab fa-youtube"></i>
+      <span>Benny Joo's YouTube Clone &copy; ${new Date().getFullYear()}</span>
+    </footer>
+  </body>
+</html>

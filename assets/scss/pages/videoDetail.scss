@@ -1,0 +1,10 @@
+.video-detail-container {
+  margin-top: 60px;
+  margin-bottom: 20px;
+  .video__player {
+    video {
+      max-height: 500px;
+      max-width: 900px;
+    }
+  }
+}

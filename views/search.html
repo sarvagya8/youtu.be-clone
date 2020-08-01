@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/static/styles.css" />
+    <link rel="icon" href="/static/titleLogo.png" type="image/png" />
+    <script
+      src="https://kit.fontawesome.com/a02776e653.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>${title} | YouTube</title>
+  </head>
+  <body>
+    <header>
+      <div class="header__wrapper">
+        <div class="header__column">
+          <a href="/">
+            <i class="fab fa-youtube"></i>
+            <h3>YouTube</h3>
+          </a>
+        </div>
+        <div class="header__column">
+          <form action="/search" method="get">
+            <input name="term" type="text" placeholder="Search..." />
+          </form>
+        </div>
+        <div class="header__column">
+          <ul>
+            <a href="/join"><li>Join</li></a>
+            <a href="/login"><li>Login</li></a>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="search__wrapper">
+      <div class="search__header">
+        <h3>Searching for: ${term}</h3>
+      </div>
+      <div class="search__videos">
+        ${(videos.length === 0) ? `
+        <h3>No Videos Found :(</h3>
+        ` : ` ${videos.map(video => `
+        <a href="${routes.videoDetail(video.id)}">
+          <video controls="true" src="${video.fileUrl}"></video>
+          <h3 class="video__title">${video.title}</h3>
+          ${(video.views === 1) ? `
+          <h3 class="video__views">1 view</h3>
+          ` : `
+          <h3 class="video__views">${video.views} views</h3>
+          ` }
+        </a>
+        `).join('')} `}
+      </div>
+    </div>
+    <footer>
+      <i class="fab fa-youtube"></i>
+      <span>Benny Joo's YouTube Clone &copy; ${new Date().getFullYear()}</span>
+    </footer>
+  </body>
+</html>
